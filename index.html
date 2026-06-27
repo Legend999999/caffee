@@ -1,1271 +1,577 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ku" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>كۆڵانی ٢١ · Kolani 21 Coffee House — Erbil</title>
+  <title>کۆڵانی ٢١ قاوەخانە — هەولێر</title>
+  <meta name="description" content="قاوەخانەی کۆڵانی ٢١ لە هەولێر — قاوەی تایبەت، بەیانیان، ژووری ئارام، دانیشتنی باخچە، و گەرمی کوردی." />
 
-  <meta name="description" content="Cozy Kurdish coffee house in Erbil — specialty coffee, breakfast all morning, garden seating." />
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
     rel="stylesheet"
-  >
-
-  <style>
-    :root {
-      --espresso: #20130f;
-      --espresso-soft: #2b1a14;
-      --cream: #f4ead8;
-      --cream-soft: #fff7ea;
-      --brass: #c79a54;
-      --clay: #9b6041;
-      --muted: #7f7568;
-      --border: rgba(58, 35, 27, 0.18);
-      --bg: #f6efe5;
-      --text: #241610;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Outfit", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font-family: inherit;
-    }
-
-    .font-display {
-      font-family: "Cormorant Garamond", serif;
-    }
-
-    .font-kurdish {
-      font-family: "Noto Naskh Arabic", serif;
-    }
-
-    .container {
-      width: min(100%, 1280px);
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .section {
-      padding: 110px 0;
-    }
-
-    .eyebrow {
-      font-size: 10px;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .eyebrow.light {
-      color: var(--brass);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 28px;
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      border: 1px solid transparent;
-      transition: 0.25s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--cream);
-      color: var(--espresso);
-    }
-
-    .btn-primary:hover {
-      background: var(--brass);
-    }
-
-    .btn-outline {
-      border-color: rgba(244, 234, 216, 0.45);
-      color: var(--cream);
-    }
-
-    .btn-outline:hover {
-      background: rgba(244, 234, 216, 0.12);
-    }
-
-    .btn-brass {
-      background: var(--brass);
-      color: var(--espresso);
-    }
-
-    .btn-brass:hover {
-      background: var(--cream);
-    }
-
-    /* Header */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 64px;
-      z-index: 1000;
-      background: rgba(246, 239, 229, 0.72);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(58, 35, 27, 0.12);
-    }
-
-    .header-inner {
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand img {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid rgba(58, 35, 27, 0.22);
-    }
-
-    .brand-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 22px;
-      line-height: 1;
-    }
-
-    .brand-subtitle {
-      font-family: "Noto Naskh Arabic", serif;
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: -2px;
-    }
-
-    .menu-toggle {
-      width: 44px;
-      height: 44px;
-      background: transparent;
-      border: none;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      justify-content: center;
-      align-items: flex-end;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      height: 1px;
-      background: var(--text);
-      display: block;
-      transition: 0.25s ease;
-    }
-
-    .menu-toggle span:nth-child(1),
-    .menu-toggle span:nth-child(2) {
-      width: 26px;
-    }
-
-    .menu-toggle span:nth-child(3) {
-      width: 17px;
-    }
-
-    .menu-toggle.active span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-      width: 26px;
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    .nav-panel {
-      position: fixed;
-      top: 64px;
-      right: 20px;
-      width: min(320px, calc(100vw - 40px));
-      background: var(--espresso);
-      color: var(--cream);
-      z-index: 999;
-      padding: 26px;
-      border: 1px solid rgba(244, 234, 216, 0.12);
-      transform: translateY(-14px);
-      opacity: 0;
-      pointer-events: none;
-      transition: 0.25s ease;
-      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
-    }
-
-    .nav-panel.open {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .nav-panel a {
-      display: block;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(244, 234, 216, 0.1);
-      font-size: 13px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(244, 234, 216, 0.85);
-    }
-
-    .nav-panel a:hover {
-      color: var(--brass);
-    }
-
-    /* Hero */
-    .hero {
-      position: relative;
-      height: 100svh;
-      min-height: 640px;
-      overflow: hidden;
-      color: var(--cream);
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-
-    .hero-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-bg::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(32, 19, 15, 0.38), rgba(32, 19, 15, 0.58), rgba(32, 19, 15, 0.88)),
-        radial-gradient(circle at 30% 30%, rgba(199, 154, 84, 0.18), transparent 35%);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding-bottom: 90px;
-    }
-
-    .hero h1 {
-      font-size: clamp(76px, 15vw, 145px);
-      line-height: 0.9;
-      font-weight: 300;
-      letter-spacing: -0.04em;
-    }
-
-    .hero h1 em {
-      color: var(--brass);
-      font-style: italic;
-    }
-
-    .hero-kurdish {
-      font-size: clamp(32px, 5vw, 58px);
-      margin-top: 8px;
-      color: rgba(244, 234, 216, 0.95);
-    }
-
-    .hero-text {
-      font-size: 18px;
-      margin-top: 24px;
-      color: rgba(244, 234, 216, 0.82);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 38px;
-    }
-
-    .rating {
-      position: absolute;
-      right: 28px;
-      bottom: 28px;
-      color: rgba(244, 234, 216, 0.62);
-      font-size: 10px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-    }
-
-    /* Intro */
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 4fr 8fr;
-      gap: 40px;
-      align-items: start;
-    }
-
-    .intro h2 {
-      font-size: clamp(44px, 7vw, 76px);
-      line-height: 1.05;
-      font-weight: 500;
-      color: var(--espresso);
-    }
-
-    .intro h2 em {
-      color: var(--clay);
-    }
-
-    .intro-kurdish {
-      margin-top: 28px;
-      color: var(--clay);
-      font-size: clamp(28px, 4vw, 42px);
-    }
-
-    .wide-image {
-      width: 100%;
-      height: 70vh;
-      min-height: 460px;
-      object-fit: cover;
-      box-shadow: 0 30px 80px rgba(32, 19, 15, 0.16);
-    }
-
-    /* Breakfast */
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .split h2 {
-      font-size: clamp(48px, 7vw, 76px);
-      line-height: 1.05;
-      color: var(--espresso);
-      font-weight: 500;
-    }
-
-    .split h2 em {
-      color: var(--clay);
-    }
-
-    .split p {
-      margin-top: 24px;
-      max-width: 480px;
-      font-size: 18px;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    .split strong {
-      color: var(--espresso);
-      font-weight: 600;
-    }
-
-    .breakfast-img {
-      box-shadow: 0 28px 70px rgba(32, 19, 15, 0.22);
-    }
-
-    /* Menu */
-    .dark-section {
-      background: var(--espresso);
-      color: var(--cream);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .dark-section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: 0.18;
-      background-image:
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08) 0 1px, transparent 1px),
-        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.07) 0 1px, transparent 1px);
-      background-size: 28px 28px;
-      pointer-events: none;
-    }
-
-    .dark-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .menu-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 25px;
-      flex-wrap: wrap;
-      margin-bottom: 52px;
-    }
-
-    .menu-heading h2 {
-      font-size: clamp(56px, 8vw, 92px);
-      font-weight: 500;
-      line-height: 0.95;
-    }
-
-    .menu-heading p {
-      font-size: 34px;
-      color: rgba(244, 234, 216, 0.72);
-      margin-top: 10px;
-    }
-
-    .prices {
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: rgba(244, 234, 216, 0.52);
-    }
-
-    .tabs {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 12px;
-      margin-bottom: 42px;
-      scrollbar-width: none;
-    }
-
-    .tabs::-webkit-scrollbar {
-      display: none;
-    }
-
-    .tab {
-      white-space: nowrap;
-      padding: 12px 18px;
-      background: transparent;
-      color: rgba(244, 234, 216, 0.7);
-      border: 1px solid rgba(244, 234, 216, 0.22);
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: 0.25s ease;
-    }
-
-    .tab:hover,
-    .tab.active {
-      background: var(--brass);
-      color: var(--espresso);
-      border-color: var(--brass);
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: 4fr 8fr;
-      gap: 48px;
-    }
-
-    .menu-title-kurdish {
-      color: var(--brass);
-      font-size: clamp(38px, 5vw, 58px);
-      margin-bottom: 4px;
-    }
-
-    .menu-title-en {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 30px;
-      font-style: italic;
-      color: rgba(244, 234, 216, 0.86);
-    }
-
-    .menu-image {
-      margin-top: 34px;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-    }
-
-    .menu-list {
-      list-style: none;
-      border-top: 1px solid rgba(244, 234, 216, 0.1);
-    }
-
-    .menu-item {
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(244, 234, 216, 0.1);
-    }
-
-    .item-name {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(23px, 3vw, 31px);
-      color: var(--cream);
-    }
-
-    .dots {
-      flex: 1;
-      border-bottom: 1px dotted rgba(244, 234, 216, 0.25);
-      transform: translateY(-5px);
-    }
-
-    .price {
-      color: var(--brass);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    /* Photo Banner */
-    .photo-banner {
-      position: relative;
-      height: 80vh;
-      min-height: 500px;
-      overflow: hidden;
-      color: var(--cream);
-    }
-
-    .photo-banner img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1.08);
-    }
-
-    .photo-banner::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(32, 19, 15, 0.84), rgba(32, 19, 15, 0.14), transparent);
-    }
-
-    .photo-banner-content {
-      position: absolute;
-      z-index: 1;
-      left: 20px;
-      right: 20px;
-      bottom: 56px;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .photo-banner h3 {
-      font-size: clamp(44px, 7vw, 76px);
-      line-height: 1.02;
-      font-weight: 500;
-    }
-
-    /* Inside */
-    .inside-grid {
-      display: grid;
-      grid-template-columns: 7fr 5fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .inside-grid h3 {
-      font-size: clamp(42px, 6vw, 62px);
-      line-height: 1.1;
-      color: var(--espresso);
-      font-weight: 500;
-    }
-
-    /* Hours */
-    .hours {
-      background: #eee0cf;
-    }
-
-    .hours h2 {
-      font-size: clamp(46px, 7vw, 76px);
-      color: var(--espresso);
-      font-weight: 500;
-    }
-
-    .hours-kurdish {
-      color: var(--clay);
-      font-size: 30px;
-      margin-top: 4px;
-    }
-
-    .hours-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 48px;
-      margin-top: 48px;
-    }
-
-    .hour-row {
-      display: flex;
-      align-items: baseline;
-      gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(58, 35, 27, 0.18);
-    }
-
-    .day-ku {
-      width: 110px;
-      color: var(--espresso);
-      font-size: 20px;
-    }
-
-    .day-en {
-      width: 40px;
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-
-    .hour-row .dots {
-      border-color: rgba(58, 35, 27, 0.26);
-    }
-
-    .time {
-      color: var(--espresso);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    /* Find */
-    .find h2 {
-      font-size: clamp(46px, 7vw, 76px);
-      line-height: 1.04;
-      font-weight: 500;
-    }
-
-    .find-address {
-      margin-top: 26px;
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.6;
-      color: rgba(244, 234, 216, 0.86);
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 38px;
-      margin-top: 64px;
-      color: rgba(244, 234, 216, 0.78);
-    }
-
-    .features h4 {
-      color: var(--brass);
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .features li {
-      list-style: none;
-      margin-bottom: 8px;
-      font-size: 15px;
-    }
-
-    /* Footer */
-    .footer {
-      background: var(--espresso);
-      color: rgba(244, 234, 216, 0.62);
-      border-top: 1px solid rgba(244, 234, 216, 0.1);
-      padding: 36px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-size: 12px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .footer-brand img {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .footer-ku {
-      font-size: 20px;
-      color: rgba(244, 234, 216, 0.84);
-      text-transform: none;
-      letter-spacing: 0;
-    }
-
-    /* Animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: 0.8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .intro-grid,
-      .split,
-      .menu-grid,
-      .inside-grid,
-      .hours-grid,
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: 82px 0;
-      }
-
-      .menu-image {
-        display: none;
-      }
-
-      .hero {
-        min-height: 620px;
-      }
-
-      .hero-content {
-        padding-bottom: 74px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .btn {
-        width: 100%;
-      }
-
-      .hero-actions {
-        width: 100%;
-      }
-
-      .menu-item {
-        gap: 10px;
-      }
-
-      .item-name {
-        font-size: 24px;
-      }
-
-      .price,
-      .time {
-        font-size: 12px;
-      }
-
-      .day-ku {
-        width: 90px;
-      }
-
-      .rating {
-        display: none;
-      }
-    }
-  </style>
+  />
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-inner">
-      <a class="brand" href="#top">
-        <img src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/logo--DlN76RI.jpg" alt="Kolani 21 logo">
-        <div>
-          <div class="brand-title">Kolani 21</div>
-          <div class="brand-subtitle" dir="rtl">قاوەخانەی کۆڵانی ٢١</div>
-        </div>
+  <div class="noise"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="nav-wrap">
+      <a href="#home" class="brand" aria-label="ماڵپەڕی کۆڵانی ٢١">
+        <span class="brand-mark">
+          <img src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/logo--DlN76RI.jpg" alt="لۆگۆی کۆڵانی ٢١" />
+        </span>
+        <span class="brand-copy">
+          <span class="brand-name">کۆڵانی ٢١</span>
+          <span class="brand-ku" dir="rtl">قاوەخانەی کۆڵانی ٢١</span>
+        </span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-        <span></span>
+      <nav class="desktop-nav" aria-label="ڕێنمایی سەرەکی">
+        <a href="#story">چیرۆک</a>
+        <a href="#breakfast">بەیانیان</a>
+        <a href="#menu">مینیو</a>
+        <a href="#space">شوێن</a>
+        <a href="#visit">سەردان</a>
+      </nav>
+
+      <a class="nav-cta" href="#visit">شوێن بگرە</a>
+
+      <button class="menu-button" id="menuButton" aria-label="کردنەوەی مینیو" aria-expanded="false">
         <span></span>
         <span></span>
       </button>
     </div>
+
+    <div class="mobile-menu" id="mobileمینیو">
+      <a href="#story">چیرۆک</a>
+      <a href="#breakfast">بەیانیان</a>
+      <a href="#menu">مینیو</a>
+      <a href="#space">شوێن</a>
+      <a href="#visit">سەردان</a>
+    </div>
   </header>
 
-  <!-- Mobile Menu -->
-  <nav class="nav-panel" id="navPanel">
-    <a href="#top">Home</a>
-    <a href="#breakfast">Breakfast</a>
-    <a href="#menu">Menu</a>
-    <a href="#hours">Hours</a>
-    <a href="#find">Find Us</a>
-  </nav>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-media" data-parallax="0.18">
+        <img
+          src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/exterior-sign-BgwnMEud.jpg"
+          alt="دەرەوەی کۆڵانی ٢١ لە شەودا"
+        />
+      </div>
 
-  <!-- Hero -->
-  <section class="hero" id="top">
-    <div class="hero-bg">
-      <img src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/exterior-sign-BgwnMEud.jpg" alt="Kolani 21 coffee house exterior at night">
-    </div>
+      <div class="hero-shade"></div>
 
-    <div class="container hero-content">
-      <div class="reveal">
-        <div class="eyebrow light">Erbil · Coffee House</div>
-        <h1 class="font-display">Kolani <em>21</em></h1>
-        <div class="font-kurdish hero-kurdish" dir="rtl">قاوەخانەی کۆڵانی ٢١</div>
-        <p class="font-kurdish hero-text" dir="rtl">☕ ئەو ماڵەی کۆمان دەکاتەوە</p>
+      <div class="floating-card card-one" data-parallax="-0.08">
+        <span class="tiny-label">هەموو ڕۆژێک کراوەیە</span>
+        <strong>٧:٠٠ بەیانی</strong>
+      </div>
 
-        <div class="hero-actions">
-          <a href="#menu" class="btn btn-primary">See the Menu</a>
-          <a href="https://maps.app.goo.gl/fXrA38M4D7QZ9LDn8" target="_blank" class="btn btn-outline">Find Us</a>
+      <div class="floating-card card-two" data-parallax="-0.12">
+        <span class="tiny-label">هەڵسەنگاندن</span>
+        <strong>★ ٤.٧</strong>
+      </div>
+
+      <div class="hero-content container">
+        <div class="hero-kicker reveal-up">هەولێر · قاوەخانەی کوردی</div>
+
+        <h1 class="hero-title reveal-up delay-1">
+          ئەو شوێنەی قاوە<br />
+          وەک <em>ماڵ</em> هەست دەکرێت.
+        </h1>
+
+        <div class="hero-ku reveal-up delay-2" dir="rtl">
+          ئەو ماڵەی کۆمان دەکاتەوە
+        </div>
+
+        <p class="hero-text reveal-up delay-3">
+          ئەزموونێکی سینەمایی و ئارام لە نزیک منارەی چۆڵی — بەیانیان، قاوەی تایبەت،
+          ئێوارەکانی باخچە، گۆشەی ئارام، و شوێنێک کە شار هێواش دەکاتەوە.
+        </p>
+
+        <div class="hero-actions reveal-up delay-4">
+          <a class="button button-primary" href="#menu">
+            <span>بگەڕێ بە مینیو</span>
+            <i>→</i>
+          </a>
+          <a class="button button-ghost" href="https://maps.app.goo.gl/fXrA38M4D7QZ9LDn8" target="_blank" rel="noopener">
+            <span>شوێنەکە بکەرەوە</span>
+            <i>↗</i>
+          </a>
         </div>
       </div>
-    </div>
 
-    <div class="rating">★ 4.7 Google</div>
-  </section>
+      <div class="hero-bottom">
+        <span>بە هێواشی دابەزە</span>
+        <span class="line"></span>
+        <span>قاوەخانەی پڕۆفیشناڵ</span>
+      </div>
+    </section>
 
-  <!-- House -->
-  <section class="section intro">
-    <div class="container intro-grid reveal">
-      <div class="eyebrow">
-        <div>— 01</div>
-        <div>The House</div>
+    <section class="section story-section" id="story">
+      <div class="container story-grid">
+        <div class="section-number reveal-up">٠١ / چیرۆک</div>
+
+        <div>
+          <h2 class="section-title reveal-up">
+            شەقامێکی ئارام، ڕووناکییەکی گەرم، کورسیی کۆن، و قاوەیەک کە خەڵک وادەکات بمێننەوە.
+          </h2>
+
+          <p class="large-ku reveal-up" dir="rtl">
+            شوێنێک بۆ دانیشتن، قسەکردن، بیرکردنەوە، و ئارامبوونەوە.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cinema-image">
+      <div class="container">
+        <div class="image-frame reveal-zoom">
+          <img
+            src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/cozy-chair-BReceO7f.jpg"
+            alt="کورسیی کۆن لە ناو کۆڵانی ٢١"
+            loading="lazy"
+          />
+          <div class="frame-caption">
+            <span>ناوەوە</span>
+            <strong>کورسیی کۆن لە لای پەنجەرە</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section breakfast" id="breakfast">
+      <div class="container split-grid">
+        <div class="copy-block">
+          <div class="section-number reveal-up">٠٢ / بەیانیان</div>
+
+          <h2 class="section-title reveal-up">
+            قاپی بەیانیان بە نەرمەیی کوردی و وردیی قاوەخانە.
+          </h2>
+
+          <p class="body-text reveal-up">
+            چای ناوخۆیی، کرواسۆنی بچووک، پەنیری کوردی، قەیماغ و هەنگوین، گویز، ماست،
+            تۆستی هێلکە و پەنیر — لە <strong>٧:٠٠ بەیانی</strong> تا <strong>١١:٥٩ بەیانی</strong> دابین دەکرێت.
+          </p>
+
+          <div class="mini-stats reveal-up">
+            <div>
+              <strong>٧:٠٠</strong>
+              <span>دەستپێکی بەیانی</span>
+            </div>
+            <div>
+              <strong>تازە</strong>
+              <span>بەیانیانی ڕۆژانە</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stacked-photos reveal-up">
+          <img
+            class="photo-main"
+            src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/breakfast-B-Pqjy9t.jpg"
+            alt="قاپی بەیانیان"
+            loading="lazy"
+          />
+          <div class="photo-note">
+            <span>هەموو بەیانیەک</span>
+            <b>ڕێوڕەسمی بەیانیان</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="container">
+        <div class="menu-head">
+          <div>
+            <div class="section-number reveal-up">٠٣ / مینیو</div>
+            <h2 class="menu-title reveal-up">مینیو</h2>
+            <p class="menu-ku reveal-up" dir="rtl">مینیوی کۆڵانی ٢١</p>
+          </div>
+
+          <div class="menu-price-note reveal-up">
+            نرخەکان بە دیناری عێراقی<br />
+            هاوپۆلەکان دابگرە
+          </div>
+        </div>
+
+        <div class="menu-tabs reveal-up" id="menuTabs"></div>
+
+        <div class="premium-menu reveal-up">
+          <div class="menu-preview">
+            <img id="menuImage" alt="پێشبینی هاوپۆلی مینیو" />
+            <div class="menu-preview-overlay">
+              <span id="menuKu"></span>
+              <strong id="menuEnglish"></strong>
+            </div>
+          </div>
+
+          <div class="menu-items" id="menuItems"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="garden" id="space">
+      <div class="garden-img" data-parallax="0.12">
+        <img
+          src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/garden-5zeYYjkZ.jpg"
+          alt="دانیشتنی باخچەی کۆڵانی ٢١"
+          loading="lazy"
+        />
       </div>
 
-      <div>
-        <h2 class="font-display">
-          A small house on a quiet <em>street</em>, where the city slows down.
+      <div class="garden-content container">
+        <div class="section-number light reveal-up">٠٤ / باخچە</div>
+        <h2 class="garden-title reveal-up">
+          لە ژێر دارەکان،<br />
+          دوای ئاوابوونی خۆر.
         </h2>
-        <p class="font-kurdish intro-kurdish" dir="rtl">ئەو ماڵەی کۆمان دەکاتەوە</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Chair Image -->
-  <section>
-    <div class="container reveal">
-      <img class="wide-image" src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/cozy-chair-BReceO7f.jpg" alt="Vintage armchairs by the window">
-    </div>
-  </section>
-
-  <!-- Breakfast -->
-  <section class="section" id="breakfast">
-    <div class="container split">
-      <div class="reveal">
-        <div class="eyebrow">— 02 · Breakfast</div>
-        <h2 class="font-display">
-          Breakfast,<br>
-          every <em>morning</em>.
-        </h2>
-        <p>
-          Local tea, mini croissant, Kurdish cheese, qaymag & honey, walnuts,
-          yogurt, egg & cheese toast — served fresh from
-          <strong>7:00 AM</strong> to <strong>11:59 AM</strong>.
+        <p class="garden-text reveal-up">
+          ڕووناکییە گەرمەکان، قاوەی تۆخ، گفتوگۆی ئارام، و ئێوارەیەک
+          کە بەبێ پەلە جوانتر دەردەکەوێت.
         </p>
       </div>
+    </section>
 
-      <div class="reveal">
-        <img class="breakfast-img" src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/breakfast-B-Pqjy9t.jpg" alt="Kolani 21 breakfast plate">
+    <section class="section rooms">
+      <div class="container rooms-grid">
+        <div class="room-image reveal-up">
+          <img
+            src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/library-sofa-BXRi17XO.jpg"
+            alt="ژووری قەنەفەی کتێبخانە"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="room-copy">
+          <div class="section-number reveal-up">٠٥ / ژوورەکان</div>
+          <h2 class="section-title reveal-up">
+            ڕەفێکی کتێب، قەنەفەیەکی نەرم، و پاشنیوەڕۆیەکی هێواش.
+          </h2>
+
+          <div class="room-list reveal-up">
+            <span>گۆشەی خوێندنەوە</span>
+            <span>قەنەفەی ئارام</span>
+            <span>ڕووناکیی نەرم</span>
+            <span>مێزی ئارام</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Menu -->
-  <section class="section dark-section" id="menu">
-    <div class="container dark-inner">
-      <div class="menu-heading">
+    <section class="section hours-section">
+      <div class="container hours-grid">
         <div>
-          <div class="eyebrow light">— 03 · Menu</div>
-          <h2 class="font-display">The Menu</h2>
-          <p class="font-kurdish" dir="rtl">مینیو</p>
+          <div class="section-number reveal-up">٠٦ / کاتەکان</div>
+          <h2 class="section-title reveal-up">هەموو ڕۆژێک کراوەیە.</h2>
+          <p class="large-ku reveal-up" dir="rtl">کاتی کردنەوە</p>
         </div>
 
-        <div class="prices">Prices in IQD</div>
-      </div>
-
-      <div class="tabs" id="tabs"></div>
-
-      <div class="menu-grid reveal">
-        <div>
-          <div class="font-kurdish menu-title-kurdish" id="menuTitleKu" dir="rtl">قاوە ساردەکان</div>
-          <div class="menu-title-en" id="menuTitleEn">Iced Coffee</div>
-          <img class="menu-image" id="menuImage" src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/iced-coffee-B5sh6Mrd.jpg" alt="Iced Coffee">
-        </div>
-
-        <ul class="menu-list" id="menuList"></ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Garden -->
-  <section class="photo-banner">
-    <img src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/garden-5zeYYjkZ.jpg" alt="Garden seating at night with string lights">
-
-    <div class="photo-banner-content">
-      <div class="eyebrow light">— 04 · Outside</div>
-      <h3 class="font-display">Under the trees, after sunset.</h3>
-    </div>
-  </section>
-
-  <!-- Inside -->
-  <section class="section">
-    <div class="container inside-grid">
-      <div class="reveal">
-        <img src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/library-sofa-BXRi17XO.jpg" alt="Reading corner with bookshelves and a cream sofa">
-      </div>
-
-      <div class="reveal">
-        <div class="eyebrow">— 05 · Inside</div>
-        <h3 class="font-display">
-          A shelf of books,<br>
-          a soft sofa,<br>
-          a slow afternoon.
-        </h3>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hours -->
-  <section class="section hours" id="hours">
-    <div class="container">
-      <div class="eyebrow">— 06 · Hours</div>
-      <h2 class="font-display">Open every day.</h2>
-      <p class="font-kurdish hours-kurdish" dir="rtl">کاتی کردنەوە</p>
-
-      <div class="hours-grid">
-        <div class="hour-row">
-          <span class="font-kurdish day-ku" dir="rtl">شەممە</span>
-          <span class="day-en">Sat</span>
-          <span class="dots"></span>
-          <span class="time">7:00 AM – 12:00 AM</span>
-        </div>
-
-        <div class="hour-row">
-          <span class="font-kurdish day-ku" dir="rtl">یەکشەم</span>
-          <span class="day-en">Sun</span>
-          <span class="dots"></span>
-          <span class="time">7:00 AM – 12:00 AM</span>
-        </div>
-
-        <div class="hour-row">
-          <span class="font-kurdish day-ku" dir="rtl">دووشەم</span>
-          <span class="day-en">Mon</span>
-          <span class="dots"></span>
-          <span class="time">7:00 AM – 12:00 AM</span>
-        </div>
-
-        <div class="hour-row">
-          <span class="font-kurdish day-ku" dir="rtl">سێشەم</span>
-          <span class="day-en">Tue</span>
-          <span class="dots"></span>
-          <span class="time">7:00 AM – 12:00 AM</span>
-        </div>
-
-        <div class="hour-row">
-          <span class="font-kurdish day-ku" dir="rtl">چوارشەم</span>
-          <span class="day-en">Wed</span>
-          <span class="dots"></span>
-          <span class="time">7:00 AM – 12:00 AM</span>
-        </div>
-
-        <div class="hour-row">
-          <span class="font-kurdish day-ku" dir="rtl">پێنج شەم</span>
-          <span class="day-en">Thu</span>
-          <span class="dots"></span>
-          <span class="time">7:00 AM – 12:00 AM</span>
-        </div>
-
-        <div class="hour-row">
-          <span class="font-kurdish day-ku" dir="rtl">هەینی</span>
-          <span class="day-en">Fri</span>
-          <span class="dots"></span>
-          <span class="time">1:30 PM – 12:00 AM</span>
+        <div class="hours-card reveal-up">
+          <div class="hour-row">
+            <span class="ku" dir="rtl">شەممە</span>
+            <span>شەممە</span>
+            <i></i>
+            <strong>٧:٠٠ بەیانی – ١٢:٠٠ نیوەشەو</strong>
+          </div>
+          <div class="hour-row">
+            <span class="ku" dir="rtl">یەکشەم</span>
+            <span>یەکشەممە</span>
+            <i></i>
+            <strong>٧:٠٠ بەیانی – ١٢:٠٠ نیوەشەو</strong>
+          </div>
+          <div class="hour-row">
+            <span class="ku" dir="rtl">دووشەم</span>
+            <span>دووشەممە</span>
+            <i></i>
+            <strong>٧:٠٠ بەیانی – ١٢:٠٠ نیوەشەو</strong>
+          </div>
+          <div class="hour-row">
+            <span class="ku" dir="rtl">سێشەم</span>
+            <span>سێشەممە</span>
+            <i></i>
+            <strong>٧:٠٠ بەیانی – ١٢:٠٠ نیوەشەو</strong>
+          </div>
+          <div class="hour-row">
+            <span class="ku" dir="rtl">چوارشەم</span>
+            <span>چوارشەممە</span>
+            <i></i>
+            <strong>٧:٠٠ بەیانی – ١٢:٠٠ نیوەشەو</strong>
+          </div>
+          <div class="hour-row">
+            <span class="ku" dir="rtl">پێنج شەم</span>
+            <span>پێنجشەممە</span>
+            <i></i>
+            <strong>٧:٠٠ بەیانی – ١٢:٠٠ نیوەشەو</strong>
+          </div>
+          <div class="hour-row">
+            <span class="ku" dir="rtl">هەینی</span>
+            <span>هەینی</span>
+            <i></i>
+            <strong>١:٣٠ پاشنیوەڕۆ – ١٢:٠٠ نیوەشەو</strong>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Find Us -->
-  <section class="section dark-section find" id="find">
-    <div class="container dark-inner">
-      <div class="eyebrow light">— 07 · Find Us</div>
-      <h2 class="font-display">Erbil, near Choly Minaret.</h2>
+    <section class="section visit" id="visit">
+      <div class="container visit-grid">
+        <div class="visit-copy">
+          <div class="section-number light reveal-up">٠٧ / سەردان</div>
+          <h2 class="visit-title reveal-up">هەولێر، نزیک منارەی چۆڵی.</h2>
 
-      <p class="font-kurdish find-address" dir="rtl">
-        هەولێر / نزیک منارەی چۆڵی — تەنیشت بانکی زاگرۆس
-      </p>
+          <p class="visit-ku reveal-up" dir="rtl">
+            هەولێر / نزیک منارەی چۆڵی — تەنیشت بانکی زاگرۆس
+          </p>
 
-      <div style="margin-top: 36px;">
-        <a href="https://maps.app.goo.gl/fXrA38M4D7QZ9LDn8" target="_blank" class="btn btn-brass">
-          Open in Google Maps
-        </a>
+          <div class="visit-actions reveal-up">
+            <a class="button button-primary" href="https://maps.app.goo.gl/fXrA38M4D7QZ9LDn8" target="_blank" rel="noopener">
+              <span>نەخشەی گووگڵ بکەرەوە</span>
+              <i>↗</i>
+            </a>
+          </div>
+        </div>
+
+        <div class="visit-card reveal-up">
+          <div class="visit-card-top">
+            <span>کۆڵانی ٢١</span>
+            <strong>ئەزموون</strong>
+          </div>
+
+          <div class="feature-grid">
+            <div>
+              <b>خزمەتگوزاری</b>
+              <span>دانیشتن لە ناوەوە</span>
+              <span>بردنەوە</span>
+              <span>گەیاندن</span>
+            </div>
+            <div>
+              <b>کەشوهەوا</b>
+              <span>ئارام</span>
+              <span>ئاسایی</span>
+              <span>شەقامی ئارام</span>
+            </div>
+            <div>
+              <b>پارکینگ</b>
+              <span>شەقامی بێبەرامبەر</span>
+              <span>پارکینگی بێبەرامبەر</span>
+              <span>گەیشتنی ئاسان</span>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+  </main>
 
-      <div class="features">
-        <div>
-          <h4>Service</h4>
-          <ul>
-            <li>Dine-in</li>
-            <li>Takeaway</li>
-            <li>Delivery</li>
-            <li>Outdoor seating</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Atmosphere</h4>
-          <ul>
-            <li>Cozy</li>
-            <li>Casual</li>
-            <li>Quiet street</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Parking</h4>
-          <ul>
-            <li>Free street parking</li>
-            <li>Free parking lot</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="footer-brand">
-        <img src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/logo--DlN76RI.jpg" alt="">
-        <span>Kolani 21 · Coffee House</span>
-      </div>
+      <a href="#home" class="footer-brand">
+        <img src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/logo--DlN76RI.jpg" alt="لۆگۆی کۆڵانی ٢١" />
+        <span>کۆڵانی ٢١ · قاوەخانە</span>
+      </a>
 
-      <div class="font-kurdish footer-ku" dir="rtl">کۆڵانی ٢١</div>
+      <span class="footer-ku" dir="rtl">کۆڵانی ٢١</span>
 
-      <div>★ 4.7 · Erbil</div>
+      <span>★ ٤.٧ · هەولێر</span>
     </div>
   </footer>
 
   <script>
     const menuData = {
-      "Iced Coffee": {
+      "قاوە ساردەکان": {
         ku: "قاوە ساردەکان",
         image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/iced-coffee-B5sh6Mrd.jpg",
         items: [
-          ["Iced Espresso Tonic", "3,500"],
-          ["Iced Americano", "4,500"],
-          ["Iced Cappuccino", "5,000"],
-          ["Iced Mocha", "5,500"],
-          ["Iced White Mocha", "5,500"],
-          ["Iced Kurdish Coffee", "5,000"],
-          ["Iced Latte", "5,000"],
-          ["Iced Spanish Latte", "6,000"],
-          ["Iced Cinnamon Latte", "6,000"],
-          ["Iced Japanese Latte", "6,000"],
-          ["Iced Caramel Latte", "6,000"],
-          ["Iced Salted Caramel Latte", "6,000"],
-          ["Iced Street-21 Latte", "6,500"],
-          ["Iced Coco Espresso", "6,500"],
-          ["Orange Americano", "6,000"],
-          ["Cold Brew", "6,000"],
-          ["Affogato", "4,500"]
+          ["ئیسپریسۆ تۆنیکی سارد", "٣،٥٠٠"],
+          ["ئەمریکانۆی سارد", "٤،٥٠٠"],
+          ["کاپوچینۆی سارد", "٥،٠٠٠"],
+          ["مۆکای سارد", "٥،٥٠٠"],
+          ["مۆکای سپیی سارد", "٥،٥٠٠"],
+          ["قاوەی کوردیی سارد", "٥،٠٠٠"],
+          ["لاتێی سارد", "٥،٠٠٠"],
+          ["لاتێی ئیسپانیی سارد", "٦،٠٠٠"],
+          ["لاتێی دارچینی سارد", "٦،٠٠٠"],
+          ["لاتێی ژاپۆنیی سارد", "٦،٠٠٠"],
+          ["لاتێی کارامێلی سارد", "٦،٠٠٠"],
+          ["لاتێی کارامێلی سوێر سارد", "٦،٠٠٠"],
+          ["لاتێی کۆڵانی ٢١ سارد", "٦،٥٠٠"],
+          ["کۆکۆ ئیسپریسۆی سارد", "٦،٥٠٠"],
+          ["ئەمریکانۆی پرتەقاڵ", "٦،٠٠٠"],
+          ["قاوەی ساردکراوە", "٦،٠٠٠"],
+          ["ئافۆگاتۆ", "٤،٥٠٠"]
         ]
       },
-
-      "Hot Coffee": {
+      "قاوە گەرمەکان": {
         ku: "قاوە گەرمەکان",
-        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/iced-coffee-B5sh6Mrd.jpg",
+        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/cozy-chair-BReceO7f.jpg",
         items: [
-          ["Espresso", "3,000"],
-          ["Americano", "4,000"],
-          ["Cappuccino", "5,000"],
-          ["Latte", "5,000"],
-          ["Mocha", "5,500"]
+          ["ئیسپریسۆ", "٣،٠٠٠"],
+          ["ئەمریکانۆ", "٤،٠٠٠"],
+          ["کاپوچینۆ", "٥،٠٠٠"],
+          ["لاتێ", "٥،٠٠٠"],
+          ["قاوەی کوردی", "٥،٠٠٠"],
+          ["مۆکا", "٥،٥٠٠"]
         ]
       },
-
-      "Matcha": {
+      "ماچا": {
         ku: "ماچا",
-        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/iced-coffee-B5sh6Mrd.jpg",
+        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/garden-5zeYYjkZ.jpg",
         items: [
-          ["Iced Matcha", "6,000"],
-          ["Matcha Latte", "6,500"],
-          ["Strawberry Matcha", "7,000"]
+          ["ماچای سارد", "٦،٠٠٠"],
+          ["لاتێی ماچا", "٦،٥٠٠"],
+          ["ماچای فرێز", "٧،٠٠٠"],
+          ["ماچای ڤانیلا", "٧،٠٠٠"]
         ]
       },
-
-      "Mojito": {
+      "مۆهیتۆ": {
         ku: "مۆهیتۆ",
-        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/iced-coffee-B5sh6Mrd.jpg",
+        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/library-sofa-BXRi17XO.jpg",
         items: [
-          ["Classic Mojito", "5,000"],
-          ["Blue Mojito", "5,500"],
-          ["Strawberry Mojito", "5,500"]
+          ["مۆهیتۆی کلاسیک", "٥،٠٠٠"],
+          ["مۆهیتۆی شین", "٥،٥٠٠"],
+          ["مۆهیتۆی فرێز", "٥،٥٠٠"],
+          ["مۆهیتۆی پاشن", "٦،٠٠٠"]
         ]
       },
-
-      "Smoothie": {
-        ku: "سموزی",
-        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/iced-coffee-B5sh6Mrd.jpg",
-        items: [
-          ["Strawberry Smoothie", "6,000"],
-          ["Mango Smoothie", "6,000"],
-          ["Mixed Berry Smoothie", "6,500"]
-        ]
-      },
-
-      "No Coffee": {
-        ku: "بێ قاوە",
-        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/iced-coffee-B5sh6Mrd.jpg",
-        items: [
-          ["Hot Chocolate", "5,000"],
-          ["Milk Chocolate", "5,000"],
-          ["Lemonade", "4,500"]
-        ]
-      },
-
-      "Tea": {
+      "چا": {
         ku: "چا",
-        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/iced-coffee-B5sh6Mrd.jpg",
+        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/breakfast-B-Pqjy9t.jpg",
         items: [
-          ["Kurdish Tea", "1,500"],
-          ["Green Tea", "2,000"],
-          ["Herbal Tea", "2,500"]
+          ["چای کوردی", "١،٥٠٠"],
+          ["چای سەوز", "٢،٠٠٠"],
+          ["چای گیایی", "٢،٥٠٠"],
+          ["چای بە شیر", "٣،٠٠٠"]
         ]
       },
-
-      "Frappe & Milkshakes": {
-        ku: "فراپێ و میلکشەیک",
+      "میلکشەیکەکان": {
+        ku: "میلکشەیک",
         image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/iced-coffee-B5sh6Mrd.jpg",
         items: [
-          ["Caramel Frappe", "6,500"],
-          ["Mocha Frappe", "6,500"],
-          ["Vanilla Milkshake", "6,000"],
-          ["Chocolate Milkshake", "6,000"]
+          ["میلکشەیکی ڤانیلا", "٦،٠٠٠"],
+          ["میلکشەیکی چۆکڵاتە", "٦،٠٠٠"],
+          ["میلکشەیکی کارامێل", "٦،٥٠٠"],
+          ["میلکشەیکی ئۆریۆ", "٧،٠٠٠"]
         ]
       }
     };
 
-    const tabs = document.getElementById("tabs");
-    const menuList = document.getElementById("menuList");
-    const menuTitleKu = document.getElementById("menuTitleKu");
-    const menuTitleEn = document.getElementById("menuTitleEn");
+    const tabs = document.getElementById("menuTabs");
+    const menuItems = document.getElementById("menuItems");
     const menuImage = document.getElementById("menuImage");
+    const menuKu = document.getElementById("menuKu");
+    const menuEnglish = document.getElementById("menuEnglish");
 
-    function renderTabs() {
-      Object.keys(menuData).forEach((category, index) => {
-        const button = document.createElement("button");
-        button.className = "tab" + (index === 0 ? " active" : "");
-        button.textContent = category;
-
-        button.addEventListener("click", () => {
-          document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
-          button.classList.add("active");
-          renderMenu(category);
-        });
-
-        tabs.appendChild(button);
-      });
-    }
-
-    function renderMenu(category) {
+    function setمینیو(category) {
       const data = menuData[category];
 
-      menuTitleKu.textContent = data.ku;
-      menuTitleEn.textContent = category;
-      menuImage.src = data.image;
-      menuImage.alt = category;
+      menuImage.style.opacity = "0";
+      menuItems.style.opacity = "0";
+      menuItems.style.transform = "translateY(10px)";
 
-      menuList.innerHTML = "";
+      setTimeout(() => {
+        menuImage.src = data.image;
+        menuImage.alt = category;
+        menuKu.textContent = data.ku;
+        menuEnglish.textContent = category;
 
-      data.items.forEach(([name, price]) => {
-        const li = document.createElement("li");
-        li.className = "menu-item";
+        menuItems.innerHTML = data.items.map(([name, price], index) => `
+          <article class="menu-row" style="--row-delay:${index * 35}ms">
+            <span class="dish">${name}</span>
+            <span class="dash"></span>
+            <strong>${price}</strong>
+          </article>
+        `).join("");
 
-        li.innerHTML = `
-          <span class="item-name">${name}</span>
-          <span class="dots"></span>
-          <span class="price">${price}</span>
-        `;
-
-        menuList.appendChild(li);
-      });
+        menuImage.style.opacity = "1";
+        menuItems.style.opacity = "1";
+        menuItems.style.transform = "translateY(0)";
+      }, 180);
     }
 
-    renderTabs();
-    renderMenu("Iced Coffee");
-
-    // Hamburger menu
-    const menuToggle = document.getElementById("menuToggle");
-    const navPanel = document.getElementById("navPanel");
-
-    menuToggle.addEventListener("click", () => {
-      menuToggle.classList.toggle("active");
-      navPanel.classList.toggle("open");
+    Object.keys(menuData).forEach((category, index) => {
+      const button = document.createElement("button");
+      button.className = "menu-tab" + (index === 0 ? " active" : "");
+      button.textContent = category;
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".menu-tab").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        setمینیو(category);
+      });
+      tabs.appendChild(button);
     });
 
-    document.querySelectorAll(".nav-panel a").forEach(link => {
+    setمینیو("قاوە ساردەکان");
+
+    const menuButton = document.getElementById("menuButton");
+    const mobileمینیو = document.getElementById("mobileمینیو");
+
+    menuButton.addEventListener("click", () => {
+      const open = menuButton.classList.toggle("active");
+      mobileمینیو.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    document.querySelectorAll(".mobile-menu a").forEach(link => {
       link.addEventListener("click", () => {
-        menuToggle.classList.remove("active");
-        navPanel.classList.remove("open");
+        menuButton.classList.remove("active");
+        mobileمینیو.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
       });
     });
 
-    // Reveal animation
-    const revealElements = document.querySelectorAll(".reveal");
-
-    const observer = new IntersectionObserver((entries) => {
+    const revealItems = document.querySelectorAll(".reveal-up, .reveal-zoom");
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.14
-    });
+    }, { threshold: 0.16 });
 
-    revealElements.forEach(el => observer.observe(el));
+    revealItems.forEach(item => revealObserver.observe(item));
+
+    const header = document.getElementById("siteHeader");
+    const progress = document.getElementById("scrollProgress");
+    const parallaxEls = document.querySelectorAll("[data-parallax]");
+    let ticking = false;
+
+    function onScroll() {
+      const y = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (y / docHeight) * 100 : 0;
+
+      progress.style.width = pct + "%";
+      header.classList.toggle("scrolled", y > 28);
+
+      parallaxEls.forEach(el => {
+        const speed = Number(el.dataset.parallax || 0);
+        const rect = el.getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+          const offset = rect.top * speed;
+          el.style.transform = `translate3d(0, ${offset}px, 0)`;
+        }
+      });
+
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    onScroll();
   </script>
 </body>
 </html>
