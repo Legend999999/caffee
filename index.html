@@ -5,16 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>کۆڵانی ٢١ قاوەخانە — هەولێر</title>
-  <meta name="description" content="قاوەخانەی کۆڵانی ٢١ لە هەولێر — قاوەی تایبەت، بەیانیان، ژووری ئارام، دانیشتنی باخچە، و گەرمی کوردی." />
+  <meta
+    name="description"
+    content="قاوەخانەی کۆڵانی ٢١ لە هەولێر — قاوەی تایبەت، بەیانیان، ژووری ئارام، دانیشتنی باخچە، و گەرمی کوردی."
+  />
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Faster image loading for hero -->
+  <link
+    rel="preload"
+    as="image"
+    href="kolan.jpg"
+  />
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- JS -->
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -25,8 +40,12 @@
     <div class="nav-wrap">
       <a href="#home" class="brand" aria-label="ماڵپەڕی کۆڵانی ٢١">
         <span class="brand-mark">
-          <img src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/logo--DlN76RI.jpg" alt="لۆگۆی کۆڵانی ٢١" />
+          <img
+            src="logo.jpg"
+            alt="لۆگۆی کۆڵانی ٢١"
+          />
         </span>
+
         <span class="brand-copy">
           <span class="brand-name">کۆڵانی ٢١</span>
           <span class="brand-ku" dir="rtl">قاوەخانەی کۆڵانی ٢١</span>
@@ -43,7 +62,12 @@
 
       <a class="nav-cta" href="#visit">شوێن بگرە</a>
 
-      <button class="menu-button" id="menuButton" aria-label="کردنەوەی مینیو" aria-expanded="false">
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="کردنەوەی مینیو"
+        aria-expanded="false"
+      >
         <span></span>
         <span></span>
       </button>
@@ -62,8 +86,10 @@
     <section class="hero" id="home">
       <div class="hero-media" data-parallax="0.18">
         <img
-          src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/exterior-sign-BgwnMEud.jpg"
+          src="kolan.jpg"
           alt="دەرەوەی کۆڵانی ٢١ لە شەودا"
+          fetchpriority="high"
+          decoding="async"
         />
       </div>
 
@@ -101,7 +127,13 @@
             <span>بگەڕێ بە مینیو</span>
             <i>→</i>
           </a>
-          <a class="button button-ghost" href="https://maps.app.goo.gl/fXrA38M4D7QZ9LDn8" target="_blank" rel="noopener">
+
+          <a
+            class="button button-ghost"
+            href="https://maps.app.goo.gl/fXrA38M4D7QZ9LDn8"
+            target="_blank"
+            rel="noopener"
+          >
             <span>شوێنەکە بکەرەوە</span>
             <i>↗</i>
           </a>
@@ -135,10 +167,12 @@
       <div class="container">
         <div class="image-frame reveal-zoom">
           <img
-            src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/cozy-chair-BReceO7f.jpg"
+            src="chair.jpg"
             alt="کورسیی کۆن لە ناو کۆڵانی ٢١"
             loading="lazy"
+            decoding="async"
           />
+
           <div class="frame-caption">
             <span>ناوەوە</span>
             <strong>کورسیی کۆن لە لای پەنجەرە</strong>
@@ -158,7 +192,8 @@
 
           <p class="body-text reveal-up">
             چای ناوخۆیی، کرواسۆنی بچووک، پەنیری کوردی، قەیماغ و هەنگوین، گویز، ماست،
-            تۆستی هێلکە و پەنیر — لە <strong>٧:٠٠ بەیانی</strong> تا <strong>١١:٥٩ بەیانی</strong> دابین دەکرێت.
+            تۆستی هێلکە و پەنیر — لە <strong>٧:٠٠ بەیانی</strong> تا
+            <strong>١١:٥٩ بەیانی</strong> دابین دەکرێت.
           </p>
 
           <div class="mini-stats reveal-up">
@@ -166,6 +201,7 @@
               <strong>٧:٠٠</strong>
               <span>دەستپێکی بەیانی</span>
             </div>
+
             <div>
               <strong>تازە</strong>
               <span>بەیانیانی ڕۆژانە</span>
@@ -176,10 +212,12 @@
         <div class="stacked-photos reveal-up">
           <img
             class="photo-main"
-            src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/breakfast-B-Pqjy9t.jpg"
+            src="break.jpg"
             alt="قاپی بەیانیان"
             loading="lazy"
+            decoding="async"
           />
+
           <div class="photo-note">
             <span>هەموو بەیانیەک</span>
             <b>ڕێوڕەسمی بەیانیان</b>
@@ -208,6 +246,7 @@
         <div class="premium-menu reveal-up">
           <div class="menu-preview">
             <img id="menuImage" alt="پێشبینی هاوپۆلی مینیو" />
+
             <div class="menu-preview-overlay">
               <span id="menuKu"></span>
               <strong id="menuEnglish"></strong>
@@ -222,18 +261,21 @@
     <section class="garden" id="space">
       <div class="garden-img" data-parallax="0.12">
         <img
-          src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/garden-5zeYYjkZ.jpg"
+          src="garden.jpg"
           alt="دانیشتنی باخچەی کۆڵانی ٢١"
           loading="lazy"
+          decoding="async"
         />
       </div>
 
       <div class="garden-content container">
         <div class="section-number light reveal-up">٠٤ / باخچە</div>
+
         <h2 class="garden-title reveal-up">
           لە ژێر دارەکان،<br />
           دوای ئاوابوونی خۆر.
         </h2>
+
         <p class="garden-text reveal-up">
           ڕووناکییە گەرمەکان، قاوەی تۆخ، گفتوگۆی ئارام، و ئێوارەیەک
           کە بەبێ پەلە جوانتر دەردەکەوێت.
@@ -245,14 +287,16 @@
       <div class="container rooms-grid">
         <div class="room-image reveal-up">
           <img
-            src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/library-sofa-BXRi17XO.jpg"
+            src="library.jpg"
             alt="ژووری قەنەفەی کتێبخانە"
             loading="lazy"
+            decoding="async"
           />
         </div>
 
         <div class="room-copy">
           <div class="section-number reveal-up">٠٥ / ژوورەکان</div>
+
           <h2 class="section-title reveal-up">
             ڕەفێکی کتێب، قەنەفەیەکی نەرم، و پاشنیوەڕۆیەکی هێواش.
           </h2>
@@ -282,36 +326,42 @@
             <i></i>
             <strong>٧:٠٠ بەیانی – ١٢:٠٠ نیوەشەو</strong>
           </div>
+
           <div class="hour-row">
             <span class="ku" dir="rtl">یەکشەم</span>
             <span>یەکشەممە</span>
             <i></i>
             <strong>٧:٠٠ بەیانی – ١٢:٠٠ نیوەشەو</strong>
           </div>
+
           <div class="hour-row">
             <span class="ku" dir="rtl">دووشەم</span>
             <span>دووشەممە</span>
             <i></i>
             <strong>٧:٠٠ بەیانی – ١٢:٠٠ نیوەشەو</strong>
           </div>
+
           <div class="hour-row">
             <span class="ku" dir="rtl">سێشەم</span>
             <span>سێشەممە</span>
             <i></i>
             <strong>٧:٠٠ بەیانی – ١٢:٠٠ نیوەشەو</strong>
           </div>
+
           <div class="hour-row">
             <span class="ku" dir="rtl">چوارشەم</span>
             <span>چوارشەممە</span>
             <i></i>
             <strong>٧:٠٠ بەیانی – ١٢:٠٠ نیوەشەو</strong>
           </div>
+
           <div class="hour-row">
             <span class="ku" dir="rtl">پێنج شەم</span>
             <span>پێنجشەممە</span>
             <i></i>
             <strong>٧:٠٠ بەیانی – ١٢:٠٠ نیوەشەو</strong>
           </div>
+
           <div class="hour-row">
             <span class="ku" dir="rtl">هەینی</span>
             <span>هەینی</span>
@@ -326,6 +376,7 @@
       <div class="container visit-grid">
         <div class="visit-copy">
           <div class="section-number light reveal-up">٠٧ / سەردان</div>
+
           <h2 class="visit-title reveal-up">هەولێر، نزیک منارەی چۆڵی.</h2>
 
           <p class="visit-ku reveal-up" dir="rtl">
@@ -333,7 +384,12 @@
           </p>
 
           <div class="visit-actions reveal-up">
-            <a class="button button-primary" href="https://maps.app.goo.gl/fXrA38M4D7QZ9LDn8" target="_blank" rel="noopener">
+            <a
+              class="button button-primary"
+              href="https://maps.app.goo.gl/fXrA38M4D7QZ9LDn8"
+              target="_blank"
+              rel="noopener"
+            >
               <span>نەخشەی گووگڵ بکەرەوە</span>
               <i>↗</i>
             </a>
@@ -353,12 +409,14 @@
               <span>بردنەوە</span>
               <span>گەیاندن</span>
             </div>
+
             <div>
               <b>کەشوهەوا</b>
               <span>ئارام</span>
               <span>ئاسایی</span>
               <span>شەقامی ئارام</span>
             </div>
+
             <div>
               <b>پارکینگ</b>
               <span>شەقامی بێبەرامبەر</span>
@@ -374,7 +432,10 @@
   <footer class="footer">
     <div class="container footer-inner">
       <a href="#home" class="footer-brand">
-        <img src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/logo--DlN76RI.jpg" alt="لۆگۆی کۆڵانی ٢١" />
+        <img
+          src="https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/logo--DlN76RI.jpg"
+          alt="لۆگۆی کۆڵانی ٢١"
+        />
         <span>کۆڵانی ٢١ · قاوەخانە</span>
       </a>
 
@@ -383,195 +444,5 @@
       <span>★ ٤.٧ · هەولێر</span>
     </div>
   </footer>
-
-  <script>
-    const menuData = {
-      "قاوە ساردەکان": {
-        ku: "قاوە ساردەکان",
-        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/iced-coffee-B5sh6Mrd.jpg",
-        items: [
-          ["ئیسپریسۆ تۆنیکی سارد", "٣،٥٠٠"],
-          ["ئەمریکانۆی سارد", "٤،٥٠٠"],
-          ["کاپوچینۆی سارد", "٥،٠٠٠"],
-          ["مۆکای سارد", "٥،٥٠٠"],
-          ["مۆکای سپیی سارد", "٥،٥٠٠"],
-          ["قاوەی کوردیی سارد", "٥،٠٠٠"],
-          ["لاتێی سارد", "٥،٠٠٠"],
-          ["لاتێی ئیسپانیی سارد", "٦،٠٠٠"],
-          ["لاتێی دارچینی سارد", "٦،٠٠٠"],
-          ["لاتێی ژاپۆنیی سارد", "٦،٠٠٠"],
-          ["لاتێی کارامێلی سارد", "٦،٠٠٠"],
-          ["لاتێی کارامێلی سوێر سارد", "٦،٠٠٠"],
-          ["لاتێی کۆڵانی ٢١ سارد", "٦،٥٠٠"],
-          ["کۆکۆ ئیسپریسۆی سارد", "٦،٥٠٠"],
-          ["ئەمریکانۆی پرتەقاڵ", "٦،٠٠٠"],
-          ["قاوەی ساردکراوە", "٦،٠٠٠"],
-          ["ئافۆگاتۆ", "٤،٥٠٠"]
-        ]
-      },
-      "قاوە گەرمەکان": {
-        ku: "قاوە گەرمەکان",
-        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/cozy-chair-BReceO7f.jpg",
-        items: [
-          ["ئیسپریسۆ", "٣،٠٠٠"],
-          ["ئەمریکانۆ", "٤،٠٠٠"],
-          ["کاپوچینۆ", "٥،٠٠٠"],
-          ["لاتێ", "٥،٠٠٠"],
-          ["قاوەی کوردی", "٥،٠٠٠"],
-          ["مۆکا", "٥،٥٠٠"]
-        ]
-      },
-      "ماچا": {
-        ku: "ماچا",
-        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/garden-5zeYYjkZ.jpg",
-        items: [
-          ["ماچای سارد", "٦،٠٠٠"],
-          ["لاتێی ماچا", "٦،٥٠٠"],
-          ["ماچای فرێز", "٧،٠٠٠"],
-          ["ماچای ڤانیلا", "٧،٠٠٠"]
-        ]
-      },
-      "مۆهیتۆ": {
-        ku: "مۆهیتۆ",
-        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/library-sofa-BXRi17XO.jpg",
-        items: [
-          ["مۆهیتۆی کلاسیک", "٥،٠٠٠"],
-          ["مۆهیتۆی شین", "٥،٥٠٠"],
-          ["مۆهیتۆی فرێز", "٥،٥٠٠"],
-          ["مۆهیتۆی پاشن", "٦،٠٠٠"]
-        ]
-      },
-      "چا": {
-        ku: "چا",
-        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/breakfast-B-Pqjy9t.jpg",
-        items: [
-          ["چای کوردی", "١،٥٠٠"],
-          ["چای سەوز", "٢،٠٠٠"],
-          ["چای گیایی", "٢،٥٠٠"],
-          ["چای بە شیر", "٣،٠٠٠"]
-        ]
-      },
-      "میلکشەیکەکان": {
-        ku: "میلکشەیک",
-        image: "https://id-preview--ff138ebc-7c5d-48d8-80b7-5add13a8e446.lovable.app/assets/iced-coffee-B5sh6Mrd.jpg",
-        items: [
-          ["میلکشەیکی ڤانیلا", "٦،٠٠٠"],
-          ["میلکشەیکی چۆکڵاتە", "٦،٠٠٠"],
-          ["میلکشەیکی کارامێل", "٦،٥٠٠"],
-          ["میلکشەیکی ئۆریۆ", "٧،٠٠٠"]
-        ]
-      }
-    };
-
-    const tabs = document.getElementById("menuTabs");
-    const menuItems = document.getElementById("menuItems");
-    const menuImage = document.getElementById("menuImage");
-    const menuKu = document.getElementById("menuKu");
-    const menuEnglish = document.getElementById("menuEnglish");
-
-    function setمینیو(category) {
-      const data = menuData[category];
-
-      menuImage.style.opacity = "0";
-      menuItems.style.opacity = "0";
-      menuItems.style.transform = "translateY(10px)";
-
-      setTimeout(() => {
-        menuImage.src = data.image;
-        menuImage.alt = category;
-        menuKu.textContent = data.ku;
-        menuEnglish.textContent = category;
-
-        menuItems.innerHTML = data.items.map(([name, price], index) => `
-          <article class="menu-row" style="--row-delay:${index * 35}ms">
-            <span class="dish">${name}</span>
-            <span class="dash"></span>
-            <strong>${price}</strong>
-          </article>
-        `).join("");
-
-        menuImage.style.opacity = "1";
-        menuItems.style.opacity = "1";
-        menuItems.style.transform = "translateY(0)";
-      }, 180);
-    }
-
-    Object.keys(menuData).forEach((category, index) => {
-      const button = document.createElement("button");
-      button.className = "menu-tab" + (index === 0 ? " active" : "");
-      button.textContent = category;
-      button.addEventListener("click", () => {
-        document.querySelectorAll(".menu-tab").forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
-        setمینیو(category);
-      });
-      tabs.appendChild(button);
-    });
-
-    setمینیو("قاوە ساردەکان");
-
-    const menuButton = document.getElementById("menuButton");
-    const mobileمینیو = document.getElementById("mobileمینیو");
-
-    menuButton.addEventListener("click", () => {
-      const open = menuButton.classList.toggle("active");
-      mobileمینیو.classList.toggle("open");
-      menuButton.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-
-    document.querySelectorAll(".mobile-menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        menuButton.classList.remove("active");
-        mobileمینیو.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    const revealItems = document.querySelectorAll(".reveal-up, .reveal-zoom");
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.16 });
-
-    revealItems.forEach(item => revealObserver.observe(item));
-
-    const header = document.getElementById("siteHeader");
-    const progress = document.getElementById("scrollProgress");
-    const parallaxEls = document.querySelectorAll("[data-parallax]");
-    let ticking = false;
-
-    function onScroll() {
-      const y = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = docHeight > 0 ? (y / docHeight) * 100 : 0;
-
-      progress.style.width = pct + "%";
-      header.classList.toggle("scrolled", y > 28);
-
-      parallaxEls.forEach(el => {
-        const speed = Number(el.dataset.parallax || 0);
-        const rect = el.getBoundingClientRect();
-        if (rect.bottom > 0 && rect.top < window.innerHeight) {
-          const offset = rect.top * speed;
-          el.style.transform = `translate3d(0, ${offset}px, 0)`;
-        }
-      });
-
-      ticking = false;
-    }
-
-    window.addEventListener("scroll", () => {
-      if (!ticking) {
-        requestAnimationFrame(onScroll);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    onScroll();
-  </script>
 </body>
 </html>
