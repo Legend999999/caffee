@@ -50,7 +50,7 @@ html {
 }
 
 body {
-  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Noto Naskh Arabic", "Segoe UI", Tahoma, serif;
   color: var(--ink);
   background:
     radial-gradient(circle at 16% 8%, rgba(217, 173, 106, .16), transparent 28rem),
@@ -177,7 +177,7 @@ button {
 }
 
 .brand-name {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Naskh Arabic", serif;
   font-size: 26px;
   font-weight: 600;
   letter-spacing: -.02em;
@@ -302,7 +302,7 @@ button {
   display: flex;
   padding: 17px 10px;
   border-bottom: 1px solid rgba(255, 247, 232, .10);
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Naskh Arabic", serif;
   font-size: 22px;
 }
 
@@ -380,11 +380,11 @@ button {
 }
 
 .hero-title {
-  max-width: 970px;
+  max-width: 500px;
   color: var(--cream);
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(72px, 12vw, 150px);
-  font-weight: 500;
+  font-family: "Noto Naskh Arabic", serif;
+  font-size: clamp(52px, 8vw, 100px);
+  font-weight: 5007;
   letter-spacing: -.065em;
   line-height: .84;
   text-shadow: 0 24px 68px rgba(0, 0, 0, .48);
@@ -512,7 +512,7 @@ button {
 
 .floating-card strong {
   color: var(--gold);
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Naskh Arabic", serif;
   font-size: 38px;
   font-weight: 500;
 }
@@ -569,7 +569,7 @@ button {
 
 .section-title {
   color: var(--ink);
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Naskh Arabic", serif;
   font-size: clamp(44px, 7vw, 82px);
   font-weight: 500;
   letter-spacing: -.045em;
@@ -651,7 +651,7 @@ button {
 
 .frame-caption strong,
 .photo-note b {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Naskh Arabic", serif;
   font-size: 27px;
   font-weight: 500;
 }
@@ -716,7 +716,7 @@ button {
 .mini-stats strong {
   display: block;
   color: var(--coffee);
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Naskh Arabic", serif;
   font-size: 42px;
   line-height: .9;
 }
@@ -774,7 +774,7 @@ button {
 .garden-title,
 .visit-title {
   color: var(--cream);
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Naskh Arabic", serif;
   font-weight: 500;
   letter-spacing: -.055em;
 }
@@ -895,7 +895,7 @@ button {
 }
 
 .menu-preview-overlay strong {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Naskh Arabic", serif;
   font-size: 46px;
   font-weight: 500;
   line-height: .95;
@@ -924,7 +924,7 @@ button {
 }
 
 .menu-row .dish {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Naskh Arabic", serif;
   font-size: clamp(25px, 3vw, 35px);
   line-height: 1;
 }
@@ -1146,7 +1146,7 @@ button {
 
 .visit-card-top strong {
   color: var(--gold);
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Naskh Arabic", serif;
   font-size: 38px;
   font-weight: 500;
 }
@@ -1281,7 +1281,7 @@ button {
 
   .hero-title {
     max-width: 860px;
-    font-size: clamp(70px, 10vw, 124px);
+    font-size: clamp(56px, 7vw, 88px);
   }
 
   .hero-text {
@@ -1529,7 +1529,7 @@ button {
 
   .hero-title {
     max-width: 760px;
-    font-size: clamp(66px, 10vw, 105px);
+    font-size: clamp(54px, 7vw, 80px);
   }
 
   .hero-ku {
@@ -1678,7 +1678,7 @@ button {
 
   .hero-title {
     max-width: 720px;
-    font-size: clamp(64px, 13vw, 98px);
+    font-size: clamp(52px, 9vw, 76px);
   }
 
   .hero-text {
@@ -1868,7 +1868,7 @@ button {
 
   .hero-title {
     max-width: 100%;
-    font-size: clamp(56px, 18vw, 88px);
+    font-size: clamp(46px, 13vw, 64px);
     line-height: .88;
   }
 
@@ -2151,7 +2151,7 @@ button {
   }
 
   .hero-title {
-    font-size: clamp(50px, 18vw, 76px);
+    font-size: clamp(42px, 13vw, 58px);
   }
 
   .hero-text {
